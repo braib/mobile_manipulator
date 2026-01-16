@@ -14,9 +14,9 @@
     diff_drive_controller:
       type: diff_drive_controller/DiffDriveController
 
-    # Steering Controllers
-    front_steering_controller:
-      type: position_controllers/JointGroupPositionController
+    # # Steering Controllers
+    # front_steering_controller:
+    #   type: position_controllers/JointGroupPositionController
 
 
 # Arm Controller Configuration
@@ -44,12 +44,12 @@
 # Differential Drive Controller Configuration
 /diff_drive_controller:
   ros__parameters:
-    left_wheel_names: ["bl_wheel_joint", "fl_wheel_joint"]
-    right_wheel_names: ["br_wheel_joint", "fr_wheel_joint"]
-    # left_wheel_names: ["fl_wheel_joint"]
-    # right_wheel_names: ["fr_wheel_joint"]
-    # left_wheel_names: ["bl_wheel_joint"]
-    # right_wheel_names: ["br_wheel_joint"]
+    left_wheel_names: 
+      - bl_wheel_joint
+      - fl_wheel_joint
+    right_wheel_names:
+      - br_wheel_joint
+      - fr_wheel_joint
 
     wheel_separation: 0.2032  # Distance between left and right wheels (meters)
     wheel_radius: 0.04445     # Wheel radius (meters)
@@ -95,15 +95,15 @@
         max_acceleration: 3.0      # Increased from 1.5
         min_acceleration: -3.0     # Increased from -1.5
 
-# Front Steering Controller Configuration
-/front_steering_controller:
-  ros__parameters:
-    joints:
-      - fl_steer_joint
-      - fr_steer_joint
+# # Front Steering Controller Configuration
+# /front_steering_controller:
+#   ros__parameters:
+#     joints:
+#       - fl_steer_joint
+#       - fr_steer_joint
     
-    command_interfaces:
-      - position
+#     command_interfaces:
+#       - position
     
-    state_interfaces:
-      - position
+#     state_interfaces:
+#       - position

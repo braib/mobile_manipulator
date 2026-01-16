@@ -69,7 +69,7 @@ def generate_launch_description():
 
     declare_prefix_arg = DeclareLaunchArgument(
         'prefix',
-        default_value='r1',
+        default_value='',
         description='namespace'
     )
 
@@ -195,16 +195,16 @@ def generate_launch_description():
     # ------------------------------------------------------------------
     # 6) front_steering_controller
     # ------------------------------------------------------------------
-    front_steering_spawner = Node(
-        package='controller_manager',
-        executable='spawner',
-        namespace=prefix,
-        arguments=[
-            'front_steering_controller',
-            '-c', controller_manager_name
-        ],
-        output='screen',
-    )
+    # front_steering_spawner = Node(
+    #     package='controller_manager',
+    #     executable='spawner',
+    #     namespace=prefix,
+    #     arguments=[
+    #         'front_steering_controller',
+    #         '-c', controller_manager_name
+    #     ],
+    #     output='screen',
+    # )
 
     # ------------------------------------------------------------------
     # 7. RViz (optional)
@@ -253,7 +253,7 @@ def generate_launch_description():
         joint_state_broadcaster_spawner,
         omni_wheel_controller_spawner,
         arm_controller_spawner,
-        front_steering_spawner,
+        # front_steering_spawner,
 
         rviz  
     ])

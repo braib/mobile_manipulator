@@ -11,7 +11,7 @@
   <xacro:include filename="$(find mobile_manipulator_description)/urdf/links.xacro"/>
   <xacro:include filename="$(find mobile_manipulator_description)/urdf/joints.xacro"/>
   <xacro:include filename="$(find mobile_manipulator_description)/urdf/mobile_manipulator_ros2_control.xacro"/>
-  <xacro:include filename="$(find mobile_manipulator_description)/urdf/sensors.xacro"/>
   <xacro:include filename="$(find mobile_manipulator_description)/urdf/mobile_manipulator_gazebo.xacro"/>
+  <!-- <xacro:include filename="$(find mobile_manipulator_description)/urdf/sensors.xacro"/> -->
   
 </robot>

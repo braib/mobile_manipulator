@@ -27,8 +27,8 @@
       
       <joint name="${frame_prefix}bl_wheel_joint">
         <command_interface name="velocity">
-          <param name="min">-200.0</param>  <!-- Increased -->
-          <param name="max">200.0</param>   <!-- Increased -->
+          <param name="min">-200.0</param>
+          <param name="max">200.0</param>
         </command_interface>
         <state_interface name="position"/>
         <state_interface name="velocity"/>
@@ -62,23 +62,23 @@
       </joint>
       
       <!-- STEERING POSITION CONTROLLERS -->
-      <joint name="${frame_prefix}fl_steer_joint">
+      <!-- <joint name="${frame_prefix}fl_steer_joint">
         <command_interface name="position">
           <param name="min">-1.571</param>
           <param name="max">1.571</param>
         </command_interface>
         <state_interface name="position"/>
         <state_interface name="velocity"/>
-      </joint>
+      </joint> -->
       
-      <joint name="${frame_prefix}fr_steer_joint">
+      <!-- <joint name="${frame_prefix}fr_steer_joint">
         <command_interface name="position">
           <param name="min">-1.571</param>
           <param name="max">1.571</param>
         </command_interface>
         <state_interface name="position"/>
         <state_interface name="velocity"/>
-      </joint>
+      </joint> -->
       
       <!-- UR ARM JOINTS remain unchanged -->
       <joint name="${frame_prefix}ur_joint1">

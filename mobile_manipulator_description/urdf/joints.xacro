@@ -70,8 +70,8 @@
   <!-- ============================================ -->
   
   <!-- Front Right Steering -->
-  <joint name="${frame_prefix}fr_steer_joint" type="revolute">
-  <!-- <joint name="${frame_prefix}fr_steer_joint" type="fixed"> -->
+  <!-- <joint name="${frame_prefix}fr_steer_joint" type="revolute"> -->
+  <joint name="${frame_prefix}fr_steer_joint" type="fixed">
     <origin xyz="${steer_x_offset} ${-steer_y_offset} ${steer_z_offset}" rpy="-1.5708 0 -1.5708"/>
     <parent link="${frame_prefix}base_link"/>
     <child link="${frame_prefix}fr_steer_link"/>
@@ -80,27 +80,33 @@
   </joint>
   
   <!-- Front Left Steering -->
-  <joint name="${frame_prefix}fl_steer_joint" type="revolute">
-  <!-- <joint name="${frame_prefix}fl_steer_joint" type="fixed"> -->
+  <!-- <joint name="${frame_prefix}fl_steer_joint" type="revolute"> -->
+  <joint name="${frame_prefix}fl_steer_joint" type="fixed">
     <origin xyz="${steer_x_offset} ${steer_y_offset} ${steer_z_offset}" rpy="-1.5708 0 -1.5708"/>
     <parent link="${frame_prefix}base_link"/>
     <child link="${frame_prefix}fl_steer_link"/>
-    <axis xyz="0 1 0"/>
-    <limit lower="-1.571" upper="1.571" effort="100" velocity="10"/>
+    <!-- <axis xyz="0 1 0"/> -->
+    <!-- <limit lower="-1.571" upper="1.571" effort="100" velocity="10"/> -->
   </joint>
   
   <!-- Back Right Steering (Fixed) -->
+  <!-- <joint name="${frame_prefix}br_steer_joint" type="revolute"> -->
   <joint name="${frame_prefix}br_steer_joint" type="fixed">
     <origin xyz="${-steer_x_offset} ${-steer_y_offset} ${steer_z_offset}" rpy="-1.5708 0 -1.5708"/>
     <parent link="${frame_prefix}base_link"/>
     <child link="${frame_prefix}br_steer_link"/>
+    <!-- <axis xyz="0 1 0"/> -->
+    <!-- <limit lower="-1.571" upper="1.571" effort="100" velocity="10"/> -->
   </joint>
   
   <!-- Back Left Steering (Fixed) -->
+  <!-- <joint name="${frame_prefix}bl_steer_joint" type="revolute"> -->
   <joint name="${frame_prefix}bl_steer_joint" type="fixed">
     <origin xyz="${-steer_x_offset} ${steer_y_offset} ${steer_z_offset}" rpy="-1.5708 0 -1.5708"/>
     <parent link="${frame_prefix}base_link"/>
     <child link="${frame_prefix}bl_steer_link"/>
+    <!-- <axis xyz="0 1 0"/> -->
+    <!-- <limit lower="-1.571" upper="1.571" effort="100" velocity="10"/> -->
   </joint>
   
   <!-- ============================================ -->

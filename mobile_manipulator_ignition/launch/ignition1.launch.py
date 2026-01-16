@@ -415,17 +415,17 @@ def generate_launch_description():
         output='screen',
     )
 
-    front_steering_spawner = Node(
-        package='controller_manager',
-        executable='spawner',
-        namespace=prefix,
-        arguments=[
-            'front_steering_controller',
-            '-c', controller_manager_name
-        ],
-        condition=IfCondition(use_ros2_control),
-        output='screen',
-    )
+    # front_steering_spawner = Node(
+    #     package='controller_manager',
+    #     executable='spawner',
+    #     namespace=prefix,
+    #     arguments=[
+    #         'front_steering_controller',
+    #         '-c', controller_manager_name
+    #     ],
+    #     condition=IfCondition(use_ros2_control),
+    #     output='screen',
+    # )
 
     # ------------------------------------------------------------------
     # Static transform: world -> odom
@@ -522,7 +522,7 @@ def generate_launch_description():
         joint_state_broadcaster_spawner,
         diff_drive_wheel_controller_spawner,
         arm_controller_spawner,
-        front_steering_spawner,
+        # front_steering_spawner,
 
         # TF static publisher
         static_tf_world_to_odom,
