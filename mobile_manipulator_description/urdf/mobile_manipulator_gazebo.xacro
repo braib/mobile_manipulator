@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+  
+  <xacro:if value="${use_ignition}">
+    
+    <!-- ROS2 Control Plugin for Ignition -->
+    <xacro:if value="${use_ros2_control}">
+      <gazebo>
+        <plugin filename="ign_ros2_control-system" name="ign_ros2_control::IgnitionROS2ControlPlugin">
+          <parameters>$(find mobile_manipulator_control)/config/${control_file}ros2_controllers.yaml</parameters>
+          <ros>
+            <namespace>${ns_prefix}</namespace>
+          </ros>
+        </plugin>
+      </gazebo>
+    </xacro:if>
+
+    <!-- ============================================ -->
+    <!-- MATERIAL PROPERTIES FOR GAZEBO -->
+    <!-- ============================================ -->
+    
+    <gazebo reference="${frame_prefix}ur_link1">
+      <mu1>0.2</mu1>
+      <mu2>0.2</mu2>
+    </gazebo>
+    
+    <gazebo reference="${frame_prefix}ur_link2">
+      <mu1>0.2</mu1>
+      <mu2>0.2</mu2>
+    </gazebo>
+    
+    <gazebo reference="${frame_prefix}ur_link3">
+      <mu1>0.2</mu1>
+      <mu2>0.2</mu2>
+    </gazebo>
+    
+    <gazebo reference="${frame_prefix}ur_link4">
+      <mu1>0.2</mu1>
+      <mu2>0.2</mu2>
+    </gazebo>
+    
+    <gazebo reference="${frame_prefix}ur_link5">
+      <mu1>0.2</mu1>
+      <mu2>0.2</mu2>
+    </gazebo>
+    
+    <gazebo reference="${frame_prefix}ur_link6">
+      <mu1>0.2</mu1>
+      <mu2>0.2</mu2>
+    </gazebo>
+    
+    <gazebo reference="${frame_prefix}fr_wheel">
+      <surface>
+        <friction>
+          <ode>
+              <mu>1.0</mu>
+              <mu2>0.0</mu2>
+          </ode>
+        </friction>
+      </surface>
+    </gazebo>
+    
+    <gazebo reference="${frame_prefix}fl_wheel">
+      <surface>
+        <friction>
+          <ode>
+              <mu>1.0</mu>
+              <mu2>0.0</mu2>
+          </ode>
+        </friction>
+      </surface>
+    </gazebo>
+    
+    <gazebo reference="${frame_prefix}br_wheel">
+      <surface>
+        <friction>
+          <ode>
+              <mu>1.0</mu>
+              <mu2>0.0</mu2>
+          </ode>
+        </friction>
+      </surface>
+    </gazebo>
+    
+    <gazebo reference="${frame_prefix}bl_wheel">
+      <surface>
+        <friction>
+          <ode>
+              <mu>1.0</mu>
+              <mu2>0.0</mu2>
+          </ode>
+        </friction>
+      </surface>
+    </gazebo>
+
+  </xacro:if>
+
+</robot>
